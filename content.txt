@@ -1,0 +1,16 @@
+Introduction:
+
+The project aims at providing people the luxury to search and find the perfect domestic help in the country. 
+It provides a platform that showcases an array of attributes, skills and authenticity of various profiles for candidates recruited for the domestic help.
+It is the perfect solution for the public's need for domestic help. 
+
+Problem statement:
+
+There exists no proper system which deals with the issue of finding the perfect domestic help that considers both the authenticity and the quality of the work done.
+
+Proposed solution:
+
+A website or an application can be developed which can act in favour of both the public and the cadidates. 
+The general public is provided with the opportunity to search and choose their perfect domestic help by taking into consideration all their work requirements. 
+The candidates get the chance to showcase their skill set to the public through a single portal and also maintains the authenticity of their profiles. 
+
