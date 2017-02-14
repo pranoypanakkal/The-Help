@@ -367,4 +367,14 @@ footer p{
 
 .section-categories{
     padding: 30px 0;
+    background-color: #fdf6f6 ;
+}
+
+.section-how{
+    padding: 30px;
+    
+}
+
+.section-how h3{
+    padding-bottom: 15px;
 }
