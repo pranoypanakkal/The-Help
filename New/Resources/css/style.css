@@ -138,7 +138,7 @@ body {
 @media (min-width: 768px) {
   /* Pull out the header and footer */
   .masthead {
-    position: fixed;
+    position: absolute;
     top: 0;
   }
   .mastfoot {
@@ -236,12 +236,14 @@ body {
 .loginmodal-submit {
   /* border: 1px solid #3079ed; */
   border: 0px;
+  border-radius: 15px;
   color: #fff;
   text-shadow: 0 1px rgba(0,0,0,0.1); 
-  background-color: #4d90fe;
+  background-color: #c32323;
   padding: 17px 0px;
   font-family: roboto;
   font-size: 14px;
+  transition: background-color 0.3s;
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
 
@@ -249,7 +251,7 @@ body {
   /* border: 1px solid #2f5bb7; */
   border: 0px;
   text-shadow: 0 1px rgba(0,0,0,0.3);
-  background-color: #357ae8;
+  background-color: #a71414;
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
 }
 
@@ -359,4 +361,10 @@ footer p{
 
 .ion-social-instagram:hover{
     color: #517fa4;
+}
+
+/******SECTIONS*******/
+
+.section-categories{
+    padding: 30px 0;
 }
