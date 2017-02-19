@@ -372,9 +372,11 @@ footer p{
 
 .section-how{
     padding: 30px;
+    font-size: 150%;
     
 }
 
 .section-how h3{
     padding-bottom: 15px;
+    color: #00004b;
 }
