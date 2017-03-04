@@ -7,3 +7,11 @@ $(document).ready(function(e){
 		$('.input-group #search_param').val(param);
 	});
 });
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
