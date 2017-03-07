@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ProfileList</title>
+        {% load staticfiles %}
+        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/grid.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/normalize.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/bootstrap.min.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Resources/css/style.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/ionicons.min.css' %}" />
+        <script type="text/javascript" src="{% static 'profiles/Vendors/js/jquery-3.1.1.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'profiles/Vendors/js/bootstrap.min.js' %}"></script>
+    
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="#">TheHelp</a>
+            </div>
+    <!--        <ul class="nav navbar-nav">
+                 <li><a href="#">TOUR</a></li>
+                <li><a href="#">HOW TO PODCAST</a></li>
+                <li><a href="#">OUR PODCASTS</a></li>
+            </ul>               -->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="gettingstarted.html"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-plus-sign"></span> Signup</a></li>
+            </ul>
+            <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="loginmodal-container">
+                        <h1>Login to Your Account</h1><br>
+                        <form>
+                            <input type="text" name="user" placeholder="Username">
+                            <input type="password" name="pass" placeholder="Password">
+                            <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                        </form>					
+                        <div class="login-help">
+                            <a href="gettingstarted.html">Register</a> - <a href="#">Forgot Password</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </nav>
+     {% for worker in all_workers %}   
+    <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <img src="http://placehold.it/380x500" alt="" class="img-rounded img-responsive" />
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h4>
+                            {{ worker.name }}</h4>
+                        <small><cite title="San Francisco, USA">{{ worker.address}} <i class="glyphicon glyphicon-map-marker">
+                        </i></cite></small>
+                        <p>
+                            <i class="glyphicon glyphicon-envelope"></i>{{ worker.email }}
+                            <br />
+                            <i class="glyphicon glyphicon-globe"></i><a>{{ worker.skills }}</a>
+                            <br />
+                            <i class="glyphicon glyphicon-gift"></i>{{ worker.age }}</p>
+                        <!-- Split button -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary">
+                                Social</button>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span><span class="sr-only">Social</span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Twitter</a></li>
+                                <li><a href="https://plus.google.com/+Jquery2dotnet/posts">Google +</a></li>
+                                <li><a href="https://www.facebook.com/jquery2dotnet">Facebook</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Github</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+{% endfor %}
+    <footer>
+        <div class="container">
+            <div class="col span-1-of-2">
+                <ul class="footer-nav">
+                    <li><a href="#">About Us</a> </li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="#">FAQ</a> </li>
+                    </ul>
+            </div>
+            <div class="col span-1-of-2">
+                <ul class="social-links">
+                    <li><a href="#"><i class="ion-social-facebook"></i></a> </li>
+                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                    <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <p>
+                Copyright &copy; 2017 by The Help. All rights reserved.
+            </p>
+        </div>
+    </footer>
+   
+        
+    </body>
+    
+</html>

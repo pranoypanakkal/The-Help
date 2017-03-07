@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% add staticfiles %}
+        <link rel="stylesheet" type="text/css" href="profiles/Resources/css/sig.css">
+<div class="testbox">
+  <h1>Sign Up</h1>
+
+  <form action="/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% include 'profiles/register.html' %}
+   <p>By clicking Submit, you agree on our <a href="#">terms and condition</a>.</p>
+   <a href="#" class="button">Submit</a>
+  </form>
+</div>
+    </head>
+</html>

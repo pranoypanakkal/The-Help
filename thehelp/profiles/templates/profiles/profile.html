@@ -1,0 +1,195 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <title>The Help</title>
+        {% load staticfiles %}
+        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/grid.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/normalize.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/bootstrap.min.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Resources/css/style.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/ionicons.min.css' %}" />
+    
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="#">TheHelp</a>
+            </div>
+    <!--        <ul class="nav navbar-nav">
+                <li><a href="#">TOUR</a></li>
+                <li><a href="#">HOW TO PODCAST</a></li>
+                <li><a href="#">OUR PODCASTS</a></li>
+            </ul>               -->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="gettingstarted.html"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                <li><a href="" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-plus-sign"></span> Signup</a></li>
+            </ul>
+            <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="loginmodal-container">
+                        <h1>Login to Your Account</h1><br>
+                        <form>
+                            <input type="text" name="user" placeholder="Username">
+                            <input type="password" name="pass" placeholder="Password">
+                            <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                        </form>					
+                        <div class="login-help">
+                            <a href="#">Register</a> - <a href="">Forgot Password</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </nav>
+        {% for worker in all_workers %}
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >   
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                        
+                            <h3 class="panel-title">{{ worker.name }}</h3>
+                        
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{ worker.Profile_pic }}"> </div>
+                            
+                
+                <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+                  <dl>
+                    <dt>DEPARTMENT:</dt>
+                    <dd>Administrator</dd>
+                    <dt>HIRE DATE</dt>
+                    <dd>11/12/2013</dd>
+                    <dt>DATE OF BIRTH</dt>
+                       <dd>11/12/2013</dd>
+                    <dt>GENDER</dt>
+                    <dd>Male</dd>
+                  </dl>
+                </div>-->
+                                <div class=" col-md-9 col-lg-9 "> 
+                                    <table class="table table-user-information">
+                                        <tbody>
+                                            <tr>
+                                                <td>Department:</td>
+                                                <td>{{ worker.skills }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Hire date:</td>
+                                                <td>{{ worker.hire }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Age</td>
+                                                <td>{{ worker.age }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gender</td>
+                                                <td>{{ worker.gender }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Home Address</td>
+                                                <td>{{ worker.address }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Email</td>
+                                                <td><a href="mailto:info@support.com">{{ worker.email }}</a></td>
+                                            </tr>
+                                            <td>Phone Number</td>
+                                            <td>{{ worker.ph_number }}
+                                            </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal">My Sales Performance</a>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>  
+                <div class="panel-footer">
+                    <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+                    <span class="pull-right">
+                        <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                        <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">My Sales Performance</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+    {% endfor %}  
+    <section class="section-testimonials">
+            <div class="row">
+                <h2>What our customers feel</h2>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-5">
+                    <blockquote>Footprints does an amazing job with providing not only quality products but also quality service. They have excellent offers and discounts and their products are authentic. They always deliver what they present. There is no misrepresentation of products.</blockquote>
+                    <cite>Sidharth Manoj</cite>
+                </div>
+                <div class="col span-1-of-5">
+                    <blockquote>Hello everyone , If you are looking for a website from where you can buy shoes. Then your search ends here. I have bought products from plenty of websites but the quality was always poor but in case of Footprints it is great. It is it's biggest plus point.</blockquote>
+                    <cite>Pranoy Paul</cite>
+                </div>
+                <div class="col span-1-of-5">
+                    <blockquote>I like Footprints for shopping shoes it is number one website for shopping of branded shoes. In past 1 year Footprints has done a great success . Its delivery time is very less now. I placed an  order and got it delivered on the next day.</blockquote>
+                    <cite>Aasif Faizal</cite>
+                </div>
+                <div class="col span-1-of-5">
+                    <blockquote>No Doubt Footprints is the Best Footwear Online store,My Experience with Footprints has always been great and there Coustomer Service is really frank and understands our Problems completely.</blockquote>
+                    <cite>Meenakshi Omprakash</cite>
+                </div>
+                <div class="col span-1-of-5">
+                    <blockquote>As far as I was concerned I have a good experience with Footprints.  The best thing was that the delivery was really awesome. I ordered a shoe from Footprints..Within days I received the delivery .</blockquote>
+                    <cite>Parvathy TR</cite>
+                </div>  
+            </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="col span-1-of-2">
+                <ul class="footer-nav">
+                    <li><a href="#">About Us</a> </li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                    <li><a href="#">FAQ</a> </li>
+                    </ul>
+            </div>
+            <div class="col span-1-of-2">
+                <ul class="social-links">
+                    <li><a href="#"><i class="ion-social-facebook"></i></a> </li>
+                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                    <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <p>
+                Copyright &copy; 2017 by The Help. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    <script src="Vendors/js/jquery-3.1.1.min.js"></script>
+    <script src="Vendors/js/bootstrap.min.js"></script>    
+    </body>
+    
+</html>
+
