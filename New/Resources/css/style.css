@@ -428,12 +428,16 @@ footer p{
     background-attachment: fixed;
 }
 
-
-
-.glyphicon {  margin-bottom: 10px;margin-right: 10px;}
-
 small {
 display: block;
 line-height: 1.428571429;
 color: #999;
+}
+
+body{
+    height: 100vh;
+}
+
+.profileList{
+    height: 100vh;
 }
