@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>The Help</title>
+         {% load staticfiles %}
+        <link type="text/css" rel="stylesheet" href="{% static 'home/Vendors/css/grid.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'home/Vendors/css/normalize.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'home/Vendors/css/bootstrap.min.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'home/Resources/css/style.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'home/Vendors/css/ionicons.min.css' %}" /> 
+    </head>
+    
+    <body>
+        <div class="site-wrapper">
+            <div class="site-wrapper-inner">
+                <div class="cover-container">
+                    <div class="masthead clearfix">
+                        <div class="inner">
+                            <h3 class="masthead-brand">TheHelp</h3>
+                            <nav>
+                                <ul class="nav masthead-nav">
+                                    <li class="active"><a>Home</a></li>
+                                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                                    <li><a herf="{% url 'profiles:worker_add' %}">Signup</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="inner cover">
+                        <h1 class="cover-heading">Find Your B!</h1>
+                        <p class="lead">Discover the perfect domestic help in the country.</p>
+                        <div class="col-xs-8 col-xs-offset-2">
+                            <div class="input-group">
+                                <div class="input-group-btn search-panel">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <span id="search_concept">Filter by</span> <span class="caret"></span>
+                                    </button> 
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#elecrtrical">Electrical</a></li>
+                                        <li><a href="#pl">Plumbing</a></li>
+                                        <li><a href="#c">Carpentry</a></li>
+                                        <li><a href="#cl">Cleaning</a></li>
+                                        <li><a href="#pa">Painting</a></li>
+                                        <li><a href="#bu">Builder</a></li>
+                                        <li><a href="#el">Electronic</a></li>
+                                        <li><a href="#pe">Pest Control</a></li>
+                                        <li><a href="#we">Welding & Fabrication</a></li>
+                                        <li><a href="#fl">Flooring</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#all">Anything</a></li>
+                                    </ul>
+                                </div>       
+                                <input type="hidden" name="search_param" value="all" id="search_param">         
+                                <input type="text" class="form-control" name="x" placeholder="Search term...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="loginmodal-container">
+                                        <h1>Login to Your Account</h1><br>
+                                        <form>
+                                        <input type="text" name="user" placeholder="Username">
+                                        <input type="password" name="pass" placeholder="Password">
+					                    <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+                                        </form>
+					                    <div class="login-help">
+					                    <a href="#">Register</a> - <a href="#">Forgot Password</a>
+				                        </div>
+                                    </div>
+                                </div>
+        </div>
+        <section class="section-categories">
+            <div class="container">
+                <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Electrical</button></div>
+                <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Plumbing</button></div>
+                <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Carpentry</button></div>
+                <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Cleaning</button></div>
+                <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Painting</button></div>
+            </div>
+        </section>
+        <section class="section-categories">
+            <div class="container">
+                <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Builder</button></div>
+                <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Electronic</button></div>
+                <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Pest Control</button></div>
+                <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Welding & Fabrication</button></div>
+                <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Flooring</button></div>
+                
+            </div>
+        </section>
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Proceed</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="section-how">
+            <h3>Follow these easy steps to book your B </h3>
+            <div class="container">
+                <div class="col span-1-of-2"><p><span class="glyphicon glyphicon-filter"></span> Filter and Search</p></div>
+                <div class="col span-1-of-2"><p><span class="glyphicon glyphicon-search"></span> Find the perfect task agent</p></div>
+            </div>
+            <div class="container">
+                <div class="col span-1-of-2"><p><span class="glyphicon glyphicon-send"></span> Request Service</p></div>
+                <div class="col span-1-of-2"><p><span class="glyphicon glyphicon-star"></span> Rate and Review</p></div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                <div class="col span-1-of-2">
+                    <ul class="footer-nav">
+                        <li><a href="#">About Us</a> </li>
+                        <li><a href="contactus.html">Contact Us</a></li>
+                        <li><a href="#">FAQ</a> </li>
+                    </ul>
+                </div>
+                <div class="col span-1-of-2">
+                    <ul class="social-links">
+                        <li><a href="#"><i class="ion-social-facebook"></i></a> </li>
+                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                        <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                        <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <p>
+                    Copyright &copy; 2017 by The Help. All rights reserved.
+                </p>
+            </div>
+        </footer>
+        {% load staticfiles %}
+          <script type="text/javascript" src="{% static 'home/Vendors/js/jquery-3.1.1.min.js' %}"></script>
+          <script type="text/javascript" src="{% static 'home/Vendors/js/bootstrap.min.js' %}"></script>
+    </body>
+</html>

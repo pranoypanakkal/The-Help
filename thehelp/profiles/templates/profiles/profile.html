@@ -7,8 +7,9 @@
         <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/normalize.css' %}" />
         <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/bootstrap.min.css' %}" />
         <link type="text/css" rel="stylesheet" href="{% static 'profiles/Resources/css/style.css' %}" />
-        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/ionicons.min.css' %}" />
-    
+        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/ionicons.min.css' %}" /> 
+        <script type="text/javascript" src="{% static 'profiles/Vendors/js/jquery-3.1.1.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'profiles/Vendors/js/bootstrap.min.js' %}"></script>  
     </head>
     <body>
         <nav class="navbar navbar-inverse">
@@ -22,9 +23,9 @@
                 <li><a href="#">OUR PODCASTS</a></li>
             </ul>               -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-                <li><a href="gettingstarted.html"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-                <li><a href="" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-plus-sign"></span> Signup</a></li>
+                <li><a href="{% url 'home:index' %}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-plus-sign"></span> Login</a></li>
+                <li><a href="{% url 'profiles:worker_add' %}"><span class="glyphicon glyphicon-user"></span> Signup</a></li>
             </ul>
             <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                 <div class="modal-dialog">
@@ -43,7 +44,6 @@
             </div>
         </div>
         </nav>
-        {% for worker in all_workers %}
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >   
@@ -75,7 +75,7 @@
                                         <tbody>
                                             <tr>
                                                 <td>Department:</td>
-                                                <td>{{ worker.skills }}</td>
+                                                <td>{{ worker.skill_1 }},{{ worker.skill_2 }},{{ worker.skill_3 }},{{ worker.skill_4 }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Hire date:</td>
@@ -119,7 +119,6 @@
         </div>
         </div>
     </div>
-    
     <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -134,8 +133,7 @@
                     </div>
                 </div>
             </div>
-    </div>
-    {% endfor %}  
+    </div>  
     <section class="section-testimonials">
             <div class="row">
                 <h2>What our customers feel</h2>
@@ -186,9 +184,7 @@
                 Copyright &copy; 2017 by The Help. All rights reserved.
             </p>
         </div>
-    </footer>
-    <script src="Vendors/js/jquery-3.1.1.min.js"></script>
-    <script src="Vendors/js/bootstrap.min.js"></script>    
+    </footer>   
     </body>
     
 </html>
