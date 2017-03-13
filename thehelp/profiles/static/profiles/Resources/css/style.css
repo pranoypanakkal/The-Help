@@ -440,4 +440,8 @@ body{
 
 .profileList{
     height: 100vh;
+  }
+
+.col-md-4{
+  max-width: 100px;
 }

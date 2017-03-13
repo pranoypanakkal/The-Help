@@ -15,7 +15,8 @@ class Worker(models.Model):
 			gender = models.CharField(max_length=15)
 			hire = models.CharField(max_length=20)
 
-def get_absolute_url(self):
-    return reverse('profiles:detail', kwargs={'pk': self.pk})		
+			def get_absolute_url(self):
+				return reverse('profiles:index')
+
 
 
