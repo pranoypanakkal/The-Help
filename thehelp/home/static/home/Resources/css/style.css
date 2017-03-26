@@ -441,3 +441,7 @@ body{
 .profileList{
     height: 100vh;
 }
+
+.modal-body{
+    text-align: left;
+}
