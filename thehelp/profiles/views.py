@@ -28,7 +28,7 @@ def worker_add(request):
 
 class WorkerCreate(CreateView):
 	model = Worker
-	fields = ['name', 'ph_number', 'email', 'address', 'age', 'gender']
+	fields = ['name', 'ph_number', 'email', 'address', 'age', 'gender', 'state', 'password', 'city']
 
 
 

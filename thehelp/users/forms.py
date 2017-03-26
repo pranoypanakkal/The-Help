@@ -3,7 +3,10 @@ from django import forms
 
 class UserForm(forms.ModelForm):
 	password = forms.CharField()
+	number   = forms.CharField()
+	
+
 
 	class Meta:
 		model = User
-		fields = ['username', 'email', 'password']
+		fields = ['username', 'email', 'password', 'number']

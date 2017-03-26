@@ -3,7 +3,7 @@
     <head>
         <title>Profile</title>
         {% load staticfiles %}
-         <link type="text/css" rel="stylesheet" href="{% static 'users/Vendors/css/grid.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'users/Vendors/css/grid.css' %}" />
         <link type="text/css" rel="stylesheet" href="{% static 'users/Vendors/css/normalize.css' %}" />
         <link type="text/css" rel="stylesheet" href="{% static 'users/Vendors/css/bootstrap.min.css' %}" />
         <link type="text/css" rel="stylesheet" href="{% static 'users/Resources/css/style.css' %}" />
@@ -24,7 +24,7 @@
                 <li><a href="#">OUR PODCASTS</a></li>
             </ul>               -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{% url 'home:index' %}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="{% url 'users:index' %}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                 <li><a href="gettingstarted.html" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-user"></span> Login</a></li>
                 <li><a href="#" ><span class="glyphicon glyphicon-plus-sign"></span> Signup</a></li>
             </ul>
@@ -45,28 +45,32 @@
             </div>
         </div>
         </nav>
-        
+
+        <a class="one" href="{% url 'users:register' %}"> User</a><br>
+                <a class="ones" href="{% url 'profiles:worker_add' %}" > Worker</a>
+
+      
         <div>
 <form class="form-horizontal" action="" method="post" enctype="mutltipart/form-data">
     <fieldset>
-
+2
         <!-- Form Name -->
         <legend>The Help</legend>
          {% csrf_token %}
+
         {% for field in form %}
         <div class="form-group">
           <label class="col-md-4 control-label" for="name">{{ field.label_tag }}</label>  
           <div class="col-md-4">
-          {{ field}}
+          {{ field }}
           </div>
         </div>
-        {% endfor %}
-        
+         {% endfor %}
        
         <!-- Button (Double) -->
         <div class="form-group">
           <label class="col-md-4 control-label" for="save"></label>
-          <div class="col-md-8">
+          <div class="col-md-4">
             <button type="submit" id="save" name="save" class="btn btn-success">Save</button>
             <button id="cancel" name="cancel" class="btn btn-danger">Cancel</button>
           </div>
@@ -74,7 +78,7 @@
 
         </fieldset>
         </form>
-
+       
 </div>
         <footer>
         <div class="container">
@@ -101,8 +105,8 @@
         </div>
     </footer>
     {% load staticfiles %}
-     <script type="text/javascript" src="{% static 'profiles/Vendors/js/jquery-3.1.1.min.js' %}"></script>
-     <script type="text/javascript" src="{% static 'profiles/Vendors/js/bootstrap.min.js' %}"></script>    
+     <script type="text/javascript" src="{% static 'users/Vendors/js/jquery-3.1.1.min.js' %}"></script>
+     <script type="text/javascript" src="{% static 'users/Vendors/js/bootstrap.min.js' %}"></script>    
     </body>
 
 </html>

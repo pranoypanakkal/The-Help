@@ -10,6 +10,7 @@ a:focus,
 a:hover {
   color: #fff;
 }
+a.one:link {color:#ffffff;}
 
 /* Custom default button */
 .btn-default,

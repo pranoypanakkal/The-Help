@@ -14,6 +14,9 @@ class Worker(models.Model):
 			Profile_pic = models.CharField(max_length=1000)
 			gender = models.CharField(max_length=15)
 			hire = models.CharField(max_length=20)
+			state = models.CharField(max_length=20)
+			password = models.CharField(max_length=100)
+			city = models.CharField(max_length=50)
 
 			def get_absolute_url(self):
 				return reverse('profiles:index')

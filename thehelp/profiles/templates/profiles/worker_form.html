@@ -3,7 +3,7 @@
     <head>
         <title>Profile</title>
         {% load staticfiles %}
-         <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/grid.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/grid.css' %}" />
         <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/normalize.css' %}" />
         <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/bootstrap.min.css' %}" />
         <link type="text/css" rel="stylesheet" href="{% static 'profiles/Resources/css/style.css' %}" />
@@ -24,7 +24,7 @@
                 <li><a href="#">OUR PODCASTS</a></li>
             </ul>               -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{% url 'home:index' %}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li><a href="{% url 'users:index' %}"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                 <li><a href="gettingstarted.html" data-toggle="modal" data-target="#login-modal"><span class="glyphicon glyphicon-user"></span> Login</a></li>
                 <li><a href="#" ><span class="glyphicon glyphicon-plus-sign"></span> Signup</a></li>
             </ul>
@@ -45,6 +45,9 @@
             </div>
         </div>
         </nav>
+
+                <a class="one" href="{% url 'users:register' %}"> User</a><br>
+                <a class="ones" href="#" > Worker</a>
         
         <div>
 <form class="form-horizontal" action="" method="post" enctype="mutltipart/form-data">
@@ -57,7 +60,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="name">{{ field.label_tag }}</label>  
           <div class="col-md-4">
-          {{ field}}
+          {{ field }}
           </div>
         </div>
         {% endfor %}
