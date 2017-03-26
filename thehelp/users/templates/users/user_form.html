@@ -45,29 +45,34 @@
             </div>
         </div>
         </nav>
+        <div class="pranoy" style="padding-top:100px"></div>
 
         <a class="one" href="{% url 'users:register' %}"> User</a><br>
                 <a class="ones" href="{% url 'profiles:worker_add' %}" > Worker</a>
+        <div class="paul" style="padding-top:70px"></div>
 
       
         <div>
-<form class="form-horizontal" action="" method="post" enctype="mutltipart/form-data">
+
+<form class="form-horizontal" action="" method="post" enctype="mutltipart/form-data" >
     <fieldset>
-2
         <!-- Form Name -->
         <legend>The Help</legend>
          {% csrf_token %}
 
         {% for field in form %}
+         <div class="iron" style="padding-left:600px">
         <div class="form-group">
           <label class="col-md-4 control-label" for="name">{{ field.label_tag }}</label>  
           <div class="col-md-4">
           {{ field }}
           </div>
         </div>
+        </div>
          {% endfor %}
        
         <!-- Button (Double) -->
+        <div class="iron" style="padding-left:600px">
         <div class="form-group">
           <label class="col-md-4 control-label" for="save"></label>
           <div class="col-md-4">
@@ -75,13 +80,14 @@
             <button id="cancel" name="cancel" class="btn btn-danger">Cancel</button>
           </div>
         </div>
+        </div>
 
         </fieldset>
         </form>
-       
-</div>
-        <footer>
-        <div class="container">
+            </div>
+
+        <footer >
+        <div class="container" >
             <div class="col span-1-of-2">
                 <ul class="footer-nav">
                     <li><a href="#">About Us</a> </li>

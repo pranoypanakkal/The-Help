@@ -3,16 +3,16 @@
     <head>
         <title>Profile</title>
         {% load staticfiles %}
-        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/grid.css' %}" />
-        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/normalize.css' %}" />
-        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/bootstrap.min.css' %}" />
-        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Resources/css/style.css' %}" />
-        <link type="text/css" rel="stylesheet" href="{% static 'profiles/Vendors/css/ionicons.min.css' %}" />
-    
+        <link type="text/css" rel="stylesheet" href="{% static 'users/Vendors/css/grid.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'users/Vendors/css/normalize.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'users/Vendors/css/bootstrap.min.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'users/Resources/css/style.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'users/Vendors/css/ionicons.min.css' %}" />
+
     </head>
-    
+
     <body>
-        
+
         <nav class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
@@ -36,7 +36,7 @@
                             <input type="text" name="user" placeholder="Username">
                             <input type="password" name="pass" placeholder="Password">
                             <input type="submit" name="login" class="login loginmodal-submit" value="Login">
-                        </form>					
+                        </form>
                         <div class="login-help">
                             <a href="gettingstarted.html">Register</a> - <a href="#">Forgot Password</a>
                         </div>
@@ -45,35 +45,35 @@
             </div>
         </div>
         </nav>
+        <div class="pranoy" style="padding-top:100px"></div>
 
-                <a class="one" href="{% url 'users:register' %}"> User</a><br>
-                <a class="ones" href="#" > Worker</a>
-        <div class="paul" style="padding-top:50px"></div>
-        
+        <a class="one" href="{% url 'users:register' %}"> User</a><br>
+                <a class="ones" href="{% url 'profiles:worker_add' %}" > Worker</a>
+        <div class="paul" style="padding-top:70px"></div>
+
+
         <div>
-<form class="form-horizontal" action="" method="post" enctype="mutltipart/form-data">
-    <fieldset>
 
+<form class="form-horizontal" action="" method="post" enctype="mutltipart/form-data" >
+    <fieldset>
         <!-- Form Name -->
         <legend>The Help</legend>
          {% csrf_token %}
-        {% for field in form %}
-        <div class="iron" style="padding-left:600px">
+         <div class="iron" style="padding-left:600px">
         <div class="form-group">
-          <label class="col-md-4 control-label" for="name">{{ field.label_tag }}</label>  
+          <label class="col-md-4 control-label" for="name">{{ field.label_tag }}</label>
           <div class="col-md-4">
           {{ field }}
           </div>
         </div>
         </div>
-        {% endfor %}
-        
-       
+         {% endfor %}
+
         <!-- Button (Double) -->
         <div class="iron" style="padding-left:600px">
         <div class="form-group">
           <label class="col-md-4 control-label" for="save"></label>
-          <div class="col-md-8">
+          <div class="col-md-4">
             <button type="submit" id="save" name="save" class="btn btn-success">Save</button>
             <button id="cancel" name="cancel" class="btn btn-danger">Cancel</button>
           </div>
@@ -82,10 +82,10 @@
 
         </fieldset>
         </form>
+            </div>
 
-</div>
-        <footer>
-        <div class="container">
+        <footer >
+        <div class="container" >
             <div class="col span-1-of-2">
                 <ul class="footer-nav">
                     <li><a href="#">About Us</a> </li>
@@ -109,8 +109,8 @@
         </div>
     </footer>
     {% load staticfiles %}
-     <script type="text/javascript" src="{% static 'profiles/Vendors/js/jquery-3.1.1.min.js' %}"></script>
-     <script type="text/javascript" src="{% static 'profiles/Vendors/js/bootstrap.min.js' %}"></script>    
+     <script type="text/javascript" src="{% static 'users/Vendors/js/jquery-3.1.1.min.js' %}"></script>
+     <script type="text/javascript" src="{% static 'users/Vendors/js/bootstrap.min.js' %}"></script>
     </body>
 
 </html>

@@ -22,7 +22,7 @@
                                 <ul class="nav masthead-nav">
                                     <li class="active"><a>Home</a></li>
                                     <li><a href="#" >{{ user.username }}</a></li>
-                                    <li><a href= >LogOut</a></li>
+                                    <li><a href="{% url 'users:logout' %}" >LogOut</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -30,34 +30,17 @@
                     <div class="inner cover">
                         <h1 class="cover-heading">Find Your Help!</h1>
                         <p class="lead">Discover the perfect domestic help in the country.</p>
+                        <form role="search" action="{% url 'users:search' %}" method="get">
                         <div class="col-xs-8 col-xs-offset-2">
                             <div class="input-group">
-                                <div class="input-group-btn search-panel">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    <span id="search_concept">Filter by</span> <span class="caret"></span>
-                                    </button> 
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#elecrtrical">Electrical</a></li>
-                                        <li><a href="#pl">Plumbing</a></li>
-                                        <li><a href="#c">Carpentry</a></li>
-                                        <li><a href="#cl">Cleaning</a></li>
-                                        <li><a href="#pa">Painting</a></li>
-                                        <li><a href="#bu">Builder</a></li>
-                                        <li><a href="#el">Electronic</a></li>
-                                        <li><a href="#pe">Pest Control</a></li>
-                                        <li><a href="#we">Welding & Fabrication</a></li>
-                                        <li><a href="#fl">Flooring</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#all">Anything</a></li>
-                                    </ul>
-                                </div>       
-                                <input type="hidden" name="search_param" value="all" id="search_param">         
                                 <input type="text" class="form-control" name="x" placeholder="Search term...">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                                    <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
                                 </span>
                             </div>
                         </div>
+                        </form>
+
                     </div>
                 </div>
             </div>
@@ -67,7 +50,6 @@
                                     <div class="loginmodal-container">
                                         <h1>Login to Your Account</h1><br>
                                         <form action="users/login" method="post">
-                                            {% csrf_token %}
                                         <input type="text" name="user" placeholder="Username">
                                         <input type="password" name="pass" placeholder="Password">
 					                    <input type="submit" name="login" class="login loginmodal-submit" value="Login">
