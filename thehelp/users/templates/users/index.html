@@ -30,7 +30,7 @@
                     <div class="inner cover">
                         <h1 class="cover-heading">Find Your Help!</h1>
                         <p class="lead">Discover the perfect domestic help in the country.</p>
-                        <form role="search" action="{% url 'users:search' %}" method="get">
+                        <form role="search" action="{% url 'users:search' user.id %}" method="get">
                         <div class="col-xs-8 col-xs-offset-2">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="x" placeholder="Search term...">
@@ -62,20 +62,40 @@
         </div>
         <section class="section-categories">
             <div class="container">
+                <form action="{% url 'users:electrical' user.id %}" method="get">
                 <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Electrical</button></div>
+                </form>
+                 <form action="{% url 'users:Plumbing' user.id %}" method="get">
                 <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Plumbing</button></div>
+                 </form>
+                <form action="{% url 'users:Carpentry' user.id %}" method="get">
                 <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Carpentry</button></div>
+                 </form>
+                <form action="{% url 'users:Cleaning' user.id %}" method="get">
                 <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Cleaning</button></div>
+                </form>
+                <form action="{% url 'users:Painting' user.id %}" method="get">
                 <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Painting</button></div>
+                    </form>
             </div>
         </section>
         <section class="section-categories">
             <div class="container">
-                <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Builder</button></div>
+                <form action="{% url 'users:Builder' user.id %}" method="get">
+                <div class="col span-1-of-5"><button type="submit" class="btn-categories" data-toggle="modal" data-target="#myModal">Builder</button></div
+                </form>
+                <form action="{% url 'users:Electronic' user.id %}" method="get">
                 <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Electronic</button></div>
+                    </form>
+                <form action="{% url 'users:PestControl' user.id %}" method="get">
                 <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Pest Control</button></div>
+                </form>
+                <form action="{% url 'users:Welding&Fabrication' user.id %}" method="get">
                 <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Welding & Fabrication</button></div>
-                <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Flooring</button></div>
+                </form>
+                <form action="{% url 'users:Flooring' user.id %}" method="get">
+                    <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Flooring</button></div>
+                </form>
                 
             </div>
         </section>

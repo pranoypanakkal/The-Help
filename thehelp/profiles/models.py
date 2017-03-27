@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.urlresolvers import reverse
 
+
 class Worker(models.Model):
 			name = models.CharField(max_length=100)
 			ph_number = models.IntegerField()
@@ -14,6 +15,7 @@ class Worker(models.Model):
 			state = models.CharField(max_length=20)
 			password = models.CharField(max_length=100)
 			city = models.CharField(max_length=50)
+			request = models.CharField(max_length=50)
 
 			def get_absolute_url(self):
 				return reverse('profiles:index')

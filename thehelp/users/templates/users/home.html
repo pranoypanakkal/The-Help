@@ -4,11 +4,11 @@
     <head>
         <title>The Help</title>
          {% load staticfiles %}
-        <link type="text/css" rel="stylesheet" href="{% static 'home/Vendors/css/grid.css' %}" />
-        <link type="text/css" rel="stylesheet" href="{% static 'home/Vendors/css/normalize.css' %}" />
-        <link type="text/css" rel="stylesheet" href="{% static 'home/Vendors/css/bootstrap.min.css' %}" />
-        <link type="text/css" rel="stylesheet" href="{% static 'home/Resources/css/style.css' %}" />
-        <link type="text/css" rel="stylesheet" href="{% static 'home/Vendors/css/ionicons.min.css' %}" /> 
+        <link type="text/css" rel="stylesheet" href="{% static 'users/Vendors/css/grid.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'users/Vendors/css/normalize.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'users/Vendors/css/bootstrap.min.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'users/Resources/css/style.css' %}" />
+        <link type="text/css" rel="stylesheet" href="{% static 'users/Vendors/css/ionicons.min.css' %}" />
     </head>
     
     <body>
@@ -61,20 +61,40 @@
         </div>
         <section class="section-categories">
             <div class="container">
+                <form action="{% url 'users:electrical' %}" method="get">
                 <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Electrical</button></div>
+                </form>
+                 <form action="{% url 'users:Plumbing' %}" method="get">
                 <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Plumbing</button></div>
+                 </form>
+                <form action="{% url 'users:Carpentry' %}" method="get">
                 <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Carpentry</button></div>
+                 </form>
+                <form action="{% url 'users:Cleaning' %}" method="get">
                 <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Cleaning</button></div>
+                </form>
+                <form action="{% url 'users:Painting' %}" method="get">
                 <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Painting</button></div>
+                    </form>
             </div>
         </section>
         <section class="section-categories">
             <div class="container">
-                <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Builder</button></div>
+                <form action="{% url 'users:Builder' %}" method="get">
+                <div class="col span-1-of-5"><button type="submit" class="btn-categories" data-toggle="modal" data-target="#myModal">Builder</button></div
+                </form>
+                <form action="{% url 'users:Electronic' %}" method="get">
                 <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Electronic</button></div>
+                    </form>
+                <form action="{% url 'users:PestControl' %}" method="get">
                 <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Pest Control</button></div>
+                </form>
+                <form action="{% url 'users:Welding&Fabrication' %}" method="get">
                 <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Welding & Fabrication</button></div>
-                <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Flooring</button></div>
+                </form>
+                <form action="{% url 'users:Flooring' %}" method="get">
+                    <div class="col span-1-of-5"><button class="btn-categories" data-toggle="modal" data-target="#myModal">Flooring</button></div>
+                </form>
                 
             </div>
         </section>
@@ -130,7 +150,7 @@
             </div>
         </footer>
         {% load staticfiles %}
-          <script type="text/javascript" src="{% static 'home/Vendors/js/jquery-3.1.1.min.js' %}"></script>
-          <script type="text/javascript" src="{% static 'home/Vendors/js/bootstrap.min.js' %}"></script>
+          <script type="text/javascript" src="{% static 'users/Vendors/js/jquery-3.1.1.min.js' %}"></script>
+          <script type="text/javascript" src="{% static 'users/Vendors/js/bootstrap.min.js' %}"></script>
     </body>
 </html>
