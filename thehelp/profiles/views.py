@@ -35,6 +35,36 @@ def detail_login(request, worker_id, user_id):
 
 	return HttpResponse(template.render(context, request))
 
+def signin(request):
+	template = loader.get_template('profiles/signin.html')
+	return HttpResponse(template.render(request))
+
+def auth(request):
+
+    template = loader.get_template('profiles/home.html')
+    username = request.GET.get('user')
+    password = request.GET.get('pass')
+    worker = Worker.objects.get(name=username, password=password)
+
+    context = {
+		'worker': worker,
+	}
+
+    return HttpResponse(template.render(context, request))
+
+
+
+
+
+def profile(request, worker_id, user_id):
+
+	user = User.objects.get(pk=user_id)
+	worker = Worker.objects.get(pk=worker_id)
+
+	context = {
+		'worker': worker,
+		'user': user,
+	}
 
 
 class WorkerCreate(CreateView):

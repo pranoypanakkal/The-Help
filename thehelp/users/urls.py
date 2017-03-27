@@ -7,6 +7,7 @@ app_name = 'users'
 urlpatterns = [
       
         url(r'^register$', views.UserFormView.as_view(), name='register'),
+        url(r'^orders(?P<worker_id>[0-9]+)/(?P<user_id>[0-9]+)', views.order, name='orders'),
         url(r'^home(?P<user_id>[0-9]+)',views.home, name='home'),
         url(r'^logout$',views.logout_view, name='logout'),
         url(r'^electrical(?P<user_id>[0-9]+)',views.electrical_login, name='electrical'),

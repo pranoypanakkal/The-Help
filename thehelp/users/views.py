@@ -292,3 +292,13 @@ def Flooring_login(request, user_id):
         'user': user,
     }
     return HttpResponse(template.render(context, request))
+
+def order(request, worker_id, user_id):
+    user = User.objects.get(pk=user_id)
+    worker = Worker.objects.get(pk=worker_id)
+    template = loader.get_template('users/orders.html')
+    context = {
+        'worker': worker,
+        'user': user,
+    }
+    return HttpResponse(template.render(context, request))
