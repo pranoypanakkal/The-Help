@@ -27,6 +27,8 @@ def detail_login(request, worker_id, user_id):
 	template = loader.get_template('profiles/profilelogin.html')
 	user = User.objects.get(pk=user_id)
 	worker = Worker.objects.get(pk=worker_id)
+	worker.request = user_id
+	worker.save()
 
 	context = {
 	       'worker': worker,
@@ -45,13 +47,27 @@ def auth(request):
     username = request.GET.get('user')
     password = request.GET.get('pass')
     worker = Worker.objects.get(name=username, password=password)
+    user_id = worker.request
+    user = User.objects.get(pk=user_id)
 
     context = {
 		'worker': worker,
+		'user': user,
 	}
+
 
     return HttpResponse(template.render(context, request))
 
+def face(request, worker_id, user_id):
+	template = loader.get_template('profiles/request.html')
+	worker = Worker.objects.get(pk=worker_id)
+	user = User.objects.get(pk=user_id)
+
+	context = {
+		'worker': worker,
+		'user': user,
+	}
+	return HttpResponse(template.render(context, request))
 
 
 
