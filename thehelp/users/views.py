@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.views.generic import View
+from django.core.mail import send_mail
 from .forms import UserForm
 from .models import Worker
 
@@ -296,6 +297,8 @@ def Flooring_login(request, user_id):
 def order(request, worker_id, user_id):
     user = User.objects.get(pk=user_id)
     worker = Worker.objects.get(pk=worker_id)
+    emailto = worker.email 
+    send_mail("Order Request", 'A work order has been placed by %s' %user.username , "thehelp@gmail.com", [emailto] , fail_silently = False)
     user
     template = loader.get_template('users/orders.html')
     context = {
